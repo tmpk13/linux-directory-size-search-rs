@@ -2,8 +2,8 @@ use clap::Parser;
 use rayon::prelude::*;
 use regex::Regex;
 use std::path::{Path, PathBuf};
-use std::sync::atomic::{AtomicU64, Ordering};
 use std::sync::Arc;
+use std::sync::atomic::{AtomicU64, Ordering};
 use walkdir::WalkDir;
 
 /// A multithreaded directory size tool (like du -sh)
@@ -27,7 +27,7 @@ struct Args {
     sort_name: bool,
 
     /// Minimum size cutoff (e.g. 1K, 10M, 1G, 500MB)
-    #[arg(short = 'm', long = "min")]
+    #[arg(short = 's', long = "size")]
     min_size: Option<String>,
 
     /// Regex filter on path names
